@@ -252,7 +252,65 @@ body{font-size:var(--type-body);line-height:var(--type-body-leading)}
 @media(max-width:600px){.shortcut-options{grid-template-columns:1fr}}
 
 #primary-navigation a[aria-current="page"]{text-decoration:none}
-</style></head><body><link rel="preload" as="image" href="public/adolphus-logo.png"/><main id="main-content" class="interior-page"><a class="skip-link" href="#page-content">Skip to content</a><header><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><nav id="primary-navigation" aria-label="Main navigation" class=""><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html">Services</a><a href="candidates.html">Candidates</a><a href="contact.html" aria-current="page">Contact</a></nav><a class="header-contact" href="contact.html" aria-current="page">Let’s talk <span>↗</span></a><button type="button" class="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">Menu</button></header><div id="page-content" tabindex="-1"><div class="route-heading"><p class="eyebrow">ADOLPHUS GROUP</p><h1>Contact us</h1></div><section class="contact" id="contact"><div class="eyebrow dark">CONTACT OUR TEAM</div><h2>We’d be pleased<br/><em>to hear from you.</em></h2><a class="button orange" href="mailto:info@adolphusgroup.com">Email our team <span>↗</span></a><a class="phone" href="tel:+442076252931">020 7625 2931</a></section></div><footer><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><p>Specialist recruitment.<br/>Personal service.</p><div><a href="mailto:info@adolphusgroup.com">info@adolphusgroup.com</a><p>2 Canfield Place, London NW6 3BT</p></div><div class="footer-bottom"><span>© 2026 Adolphus Group</span><a href="#">Back to top ↑</a></div></footer></main><script>// Shared interactions for the Next.js page and standalone preview.
+
+footer .footer-links,footer .footer-contact{display:grid;gap:6px;justify-items:start}
+footer .footer-links h2,footer .footer-contact h2{font:600 1rem/1.5 var(--type-family);letter-spacing:0;margin:0 0 4px}
+footer .footer-links a,footer .footer-contact a{min-height:26px;overflow-wrap:anywhere}
+footer .footer-links a:hover,footer .footer-contact a:hover{text-decoration:underline;text-underline-offset:3px}
+@media(min-width:801px){footer>div.footer-links,footer>div.footer-contact{grid-column:auto}footer{grid-template-columns:1.1fr .8fr 1.1fr}}
+
+.intro{grid-template-columns:minmax(0,1fr);gap:0}
+.home-overview h2{margin-top:0}
+.feature-content h3,.careers h2{margin-top:0}
+
+.services-page{padding-top:clamp(40px,6vw,76px)}
+.services-page h1{font:500 clamp(2.5rem,6vw,4.5rem)/1.08 var(--type-family);letter-spacing:var(--type-heading-track)}
+
+.service-detail h1{font:500 clamp(2.5rem,6vw,4.5rem)/1.08 var(--type-family);letter-spacing:var(--type-heading-track)}
+.service-detail>.inline-link{margin-bottom:28px}
+.service-detail>p{margin-top:16px;color:var(--muted)}
+
+.hospitality-guide{display:grid;gap:18px}
+.hospitality-guide>p{color:var(--muted);max-width:66ch}
+.hospitality-guide .process-grid{margin:12px 0 20px}
+.hospitality-guide h2:not(:first-child){margin-top:20px}
+
+/* Align service details to one content grid. */
+.service-detail{width:min(100%,1320px);margin-inline:auto}
+.service-detail>.inline-link{margin-bottom:24px}
+.service-detail .section-heading{max-width:none;margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.service-detail .section-heading>p{margin-top:14px;max-width:64ch}
+.hospitality-guide{gap:0}
+.hospitality-guide h2{font-size:clamp(1.65rem,3.2vw,2.65rem);margin:0 0 12px}
+.hospitality-guide>p{max-width:64ch;margin:0}
+.hospitality-guide .process-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:28px 0 36px}
+.hospitality-guide .process-grid article{padding:22px 0 0}
+.hospitality-guide .process-grid h3{margin-bottom:8px}
+.hospitality-guide h2:not(:first-child){margin-top:32px}
+.service-detail>.detail-actions{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);gap:12px 24px}
+@media(max-width:800px){.hospitality-guide .process-grid{grid-template-columns:1fr;gap:16px;margin:24px 0 20px}.hospitality-guide .process-grid article{padding-top:16px}}
+
+/* Hospitality opening: one headline and one primary action. */
+.hospitality-lead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;overflow:hidden;background:#f7f4ef;border-radius:16px;margin-bottom:clamp(40px,6vw,76px)}
+.hospitality-lead-copy{padding:clamp(26px,4.5vw,68px)}
+.hospitality-lead h1{font-size:clamp(2.45rem,5vw,4.75rem);line-height:1.02}
+.hospitality-lead p{font-size:1.125rem;line-height:1.55;color:var(--muted);margin:20px 0 26px;max-width:33ch}
+.hospitality-lead img{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:72% center}
+@media(max-width:800px){.hospitality-lead{grid-template-columns:1fr}.hospitality-lead img{min-height:0;height:clamp(180px,40vw,300px)}}
+
+.hospitality-guide .process-grid{margin-bottom:40px}
+.hospitality-guide .process-grid article{border-top:1px solid var(--line);padding-top:18px}
+.hospitality-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.hospitality-paths article{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:clamp(22px,3vw,40px);background:#f7f4ef;border:1px solid var(--line);border-radius:14px}
+.hospitality-paths article h2{font-size:clamp(1.35rem,2.4vw,1.85rem);margin:0;line-height:1.2}
+.hospitality-paths article p{margin:0 0 6px;color:var(--muted);line-height:1.65}
+.hospitality-paths article a{margin-top:auto}
+@media(max-width:700px){.hospitality-paths{grid-template-columns:1fr}}
+
+.hospitality-guide-intro{max-width:66ch}
+.hospitality-guide-intro p,.hospitality-guide .process-grid p{color:var(--muted);line-height:1.65}
+.hospitality-guide .process-grid h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+</style></head><body><link rel="preload" as="image" href="public/adolphus-logo.png"/><main id="main-content" class="interior-page"><a class="skip-link" href="#page-content">Skip to content</a><header><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><nav id="primary-navigation" aria-label="Main navigation" class=""><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html">Services</a><a href="candidates.html">Candidates</a><a href="contact.html" aria-current="page">Contact</a></nav><a class="header-contact" href="contact.html" aria-current="page">Let’s talk <span>↗</span></a><button type="button" class="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">Menu</button></header><div id="page-content" tabindex="-1"><div class="route-heading"><h1>Contact us</h1></div><section class="contact" id="contact"><h2>We’d be pleased<br/><em>to hear from you.</em></h2><a class="button orange" href="mailto:info@adolphusgroup.com">Email our team <span>↗</span></a><a class="phone" href="tel:+442076252931">020 7625 2931</a></section></div><footer><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><div class="footer-links" role="navigation" aria-label="Footer navigation"><h2>Explore</h2><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html">Services</a><a href="candidates.html">Candidates</a><a href="contact.html">Contact</a></div><div class="footer-contact"><h2>Get in touch</h2><a href="mailto:info@adolphusgroup.com">info@adolphusgroup.com</a><a href="tel:+442076252931">020 7625 2931</a><p>2 Canfield Place, London NW6 3BT</p></div><div class="footer-bottom"><span>© 2026 Adolphus Group</span><a href="#">Back to top ↑</a></div></footer></main><script>// Shared interactions for the Next.js page and standalone preview.
 (function () {
   function init() {
     const menu = document.querySelector('.menu');
