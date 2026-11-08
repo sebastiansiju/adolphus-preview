@@ -60,7 +60,30 @@
           if (!target.contains(document.activeElement)) target.classList.add('motion-enter');
         });
       }, {threshold: 0.08});
-      document.querySelectorAll('.intro > *, .expertise-heading, .expertise-feature, .expertise-card, .section-heading, .sector-details details, .values article, .careers-copy, .candidate-enquiry form, .process article, .contact > *, footer > *').forEach(target => observer.observe(target));
+      document.querySelectorAll('.intro:not(.home-overview) > *, .expertise-heading, .expertise-feature, .expertise-card, .section-heading, .sector-details details, .values article, .careers-copy, .candidate-enquiry form, .process article, .contact > *, footer > *').forEach(target => observer.observe(target));
+    }
+    const sections = Array.from(document.querySelectorAll('.home-page #page-content > section:not(:first-child)'));
+    if (sections.length && 'IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      function updateSections() {
+        const linked = document.getElementById(location.hash.slice(1));
+        for (const section of sections) {
+          const rect = section.getBoundingClientRect();
+          const visible = (window.scrollY > 0 && rect.top < window.innerHeight && rect.bottom > 0)
+            || (linked && section.contains(linked) && rect.top < window.innerHeight && rect.bottom > 0)
+            || section.contains(document.activeElement);
+          section.classList.toggle('scroll-section-hidden', !visible);
+        }
+      }
+      const observer = new IntersectionObserver(updateSections);
+      sections.forEach(section => observer.observe(section));
+      let frame = 0;
+      window.addEventListener('scroll', () => {
+        if (!frame) frame = window.requestAnimationFrame(() => { frame = 0; updateSections(); });
+      }, {passive:true});
+      window.addEventListener('hashchange', updateSections);
+      document.addEventListener('focusin', updateSections);
+      window.addEventListener('pageshow', updateSections);
+      updateSections();
     }
     const motion = document.querySelector('#motion-toggle');
     motion?.addEventListener('click', () => {

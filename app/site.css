@@ -313,3 +313,184 @@ footer .footer-links a:hover,footer .footer-contact a:hover{text-decoration:unde
 
 .site-arrow{display:inline-block;width:1em;height:1em;vertical-align:-.125em;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .inline-link>.site-arrow,.footer-bottom a>.site-arrow{margin-inline:4px}
+
+body{font-weight:300}
+:root{--type-heading-weight:300}
+.banner-copy h1,.route-heading h1,.services-page h1,.service-detail h1,.home-shortcuts h2,h1,h2,h3,.feature-content h3,.card-content h3,.values h3,.process h3{font-weight:300}
+.button,.banner-primary,.banner-secondary,.header-contact,.menu,.card-action,form label{font-weight:700}
+
+/* Editorial display serif paired with Sansation for supporting text. */
+:root{--type-display:Inter,Arial,sans-serif}
+#page-content :is(h1,h2,h3){font-family:var(--type-display);font-weight:600;letter-spacing:-.025em}
+#page-content :is(h1,h2,h3) em{font-family:inherit}
+#page-content .banner-copy h1{line-height:1}
+
+/* Unitless leading scales with each font size, including wrapped mobile text. */
+:root{--type-body-leading:1.5;--leading-long:1.6;--leading-display:1.1;--leading-heading:1.16;--leading-subheading:1.22;--leading-control:1.35}
+body{line-height:var(--type-body-leading)}
+#page-content :is(h1,.banner-copy h1,.hospitality-lead h1){line-height:var(--leading-display)}
+#page-content h2{line-height:var(--leading-heading)}
+#page-content h3{line-height:var(--leading-subheading)}
+#page-content p{line-height:var(--type-body-leading)}
+#page-content :is(.intro-bottom,.feature-content,.hospitality-guide-intro,.hospitality-paths,.section-heading) p{line-height:var(--leading-long)}
+.button,.banner-primary,.banner-secondary,.header-contact,.menu,.card-action,.inline-link,form label,input,select,textarea{line-height:var(--leading-control)}
+
+body{font-weight:400}
+:root{--type-heading-weight:500}
+
+/* Readable body copy with a distinct display and heading scale. */
+:root{--type-body:18px;--type-body-leading:1.5;--leading-long:1.5;--type-section:35px;--type-card:24px;--leading-subheading:1.25}
+#page-content p{font-size:var(--type-body)}
+#page-content .banner-copy p{font-size:24px;line-height:1.5;max-width:33ch}
+#page-content :is(h2,h3){line-height:var(--leading-subheading)}
+#page-content h2{font-size:var(--type-section)}
+#page-content h3{font-size:var(--type-card)}
+@media(max-width:600px){#page-content .banner-copy p{font-size:20px}#page-content h2{font-size:30px}}
+
+/* Responsive type scale: compact cards, readable page copy, distinct page titles. */
+:root{--type-body:1rem;--type-section:2.1875rem;--type-card:1.5rem;--type-small:.875rem;--leading-subheading:1.25}
+#page-content p{font-size:var(--type-body);line-height:1.5}
+#page-content .banner-copy p{font-size:1rem;line-height:1.4;max-width:42ch}
+#page-content .expertise-heading>p,#page-content .hospitality-lead p,#page-content .route-heading>p{font-size:1rem;line-height:1.4}
+#page-content :is(.card-content,.process-grid article,.shortcut-options article,.shortcut-options>a) h3{font-size:1.5rem;line-height:1.2}
+#page-content :is(.card-content,.process-grid article,.shortcut-options>a) p{font-size:.875rem;line-height:1.5}
+#page-content h2{font-size:clamp(1.75rem,4vw,2.1875rem)}
+#page-content :is(.route-heading,.services-page,.service-detail) h1{font-size:clamp(2rem,5vw,3rem)}
+.button,.banner-primary,.banner-secondary,.header-contact,.menu{font-size:1rem;min-height:48px;line-height:1.25}
+.card-action{font-size:1rem;line-height:1.25}
+.banner-primary,.banner-secondary{white-space:normal}
+
+.home-page .home-overview{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(24px,6vw,88px)}
+.home-overview .london-photo{width:100%;height:auto;aspect-ratio:11/7;object-fit:cover;border-radius:14px}
+@media(max-width:800px){.home-page .home-overview{grid-template-columns:1fr}}
+
+/* Show the entire London panorama edge to edge. */
+.home-page .home-overview{grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,48px);padding-bottom:0}
+.home-page .home-overview .london-photo{width:calc(100% + 2 * var(--gutter));max-width:none;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:0;margin-inline:calc(-1 * var(--gutter));display:block}
+
+/* Homepage introduction over the full London panorama. */
+.home-page .home-overview{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;padding:clamp(44px,9vw,125px) var(--gutter);min-height:clamp(360px,63.7vw,900px);color:white;background:#17191c;overflow:hidden}
+.home-page .home-overview>div{position:relative;z-index:1;max-width:550px}
+.home-page .home-overview .london-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center;border-radius:0;z-index:-2}
+.home-page .home-overview:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#101318ee 0%,#101318c9 34%,#10131855 69%,#10131838 100%)}
+.home-page .home-overview :is(h2,p,a){color:white}
+.home-page .home-overview a{border-color:#ffffff9c}
+.home-page .home-overview a:hover{border-color:white}
+@media(max-width:600px){.home-page .home-overview .london-photo{object-fit:contain;object-position:center top}.home-page .home-overview{padding-top:calc(63.7vw + 24px);padding-bottom:36px}.home-page .home-overview:before{background:linear-gradient(180deg,#10131830,#10131870 46%,#17191c 72%)}}
+
+
+/* A one-time 3D reveal after the London section is scrolled into view. */
+@media(prefers-reduced-motion:no-preference){
+  .home-page .home-overview.london-pending{background:white}
+  .home-page .home-overview.london-pending :is(.london-photo,div),.home-page .home-overview.london-pending:before{opacity:0}
+  .home-overview.london-revealed .london-photo{transform-origin:50% 85%;animation:london-tilt 1.05s cubic-bezier(.16,1,.3,1) both}
+  .home-overview.london-revealed>div{transform-origin:left bottom;animation:london-text-tilt .75s cubic-bezier(.16,1,.3,1) .2s both}
+  .home-overview.london-revealed:focus-within>div{animation:none}
+}
+@keyframes london-tilt{from{opacity:0;transform:perspective(1000px) rotateX(34deg) translateY(90px) scale(.88)}to{opacity:1;transform:perspective(1000px) rotateX(0deg) translateY(0) scale(1)}}
+@keyframes london-text-tilt{from{opacity:0;transform:perspective(700px) rotateX(24deg) translateY(34px)}to{opacity:1;transform:perspective(700px) rotateX(0deg) translateY(0)}}
+
+/* Keep the first actions with the message and the skyline visible before its reveal. */
+.home-page .banner-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:'copy' 'strip';grid-template-rows:1fr auto;min-height:clamp(480px,60vh,620px)}
+.home-page .banner-copy{grid-area:copy;max-width:800px;padding-top:0}
+.home-page .banner-copy h1{font-size:clamp(2.7rem,5.8vw,5.7rem)}
+.home-page .banner-copy .banner-actions{justify-content:flex-start;margin-top:24px}
+.home-page .home-overview{min-height:clamp(360px,46vw,650px)}
+@media(prefers-reduced-motion:no-preference){
+.home-page .home-overview.london-pending{background:#17191c}
+.home-page .home-overview.london-pending :is(.london-photo,div),.home-page .home-overview.london-pending:before{opacity:1}
+.home-overview.london-revealed .london-photo{animation:none}
+}
+@media(max-width:800px){.home-page .banner-layout{min-height:0}}
+
+.home-services .feature-content{justify-content:center}
+.home-services .feature-bottom{margin-top:22px;padding-top:0;font-size:1rem;font-weight:600;line-height:1.5}
+.home-services .feature-bottom>span:last-child{font-size:inherit}
+.home-services .expertise-feature:is(:hover,:focus-visible) .feature-bottom span{text-decoration:underline;text-underline-offset:4px}
+
+.home-sector-directory{margin-top:28px}
+#page-content .home-sector-directory h3{font-size:1rem;margin-bottom:12px}
+.home-sector-directory ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.home-sector-directory a{display:flex;align-items:center;min-height:52px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;font-weight:500}
+.home-sector-directory a:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:850px){.home-sector-directory ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:380px){.home-sector-directory ul{grid-template-columns:1fr}}
+
+/* Keep the employer action and its three steps in one composition. */
+.home-page .home-process{padding-block:clamp(44px,6vw,80px)}
+.home-hiring-layout{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:clamp(28px,6vw,88px);padding:clamp(24px,4.5vw,60px);background:#f7f5f1;border-radius:16px}
+.home-hiring-intro p{margin:14px 0 24px;max-width:34ch;color:var(--muted)}
+.home-hiring-steps{margin:0;padding:0;list-style:none}
+.home-hiring-steps li{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.home-hiring-steps li:first-child{padding-top:0}
+.home-hiring-steps li:last-child{border-bottom:0;padding-bottom:0}
+.hiring-step-number{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+#page-content .home-hiring-steps h3{font-size:1.125rem;line-height:1.3;margin:0 0 6px}
+.home-hiring-steps p{color:var(--muted)}
+@media(max-width:700px){.home-hiring-layout{grid-template-columns:1fr}.home-hiring-steps{border-top:1px solid var(--line);padding-top:20px}}
+
+/* Hiring: editorial typography, a fine signal line and a quiet canvas. */
+.hiring-editorial{padding-block:clamp(56px,8vw,112px);background:#fff}
+.hiring-editorial-inner{max-width:1320px;margin-inline:auto}
+.hiring-editorial .hiring-editorial-header{max-width:none;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:end;gap:24px 40px;margin:0 0 clamp(28px,5vw,58px)}
+#page-content .hiring-editorial h2{font-size:clamp(2.35rem,6.3vw,5.2rem);line-height:1;letter-spacing:-.065em}
+#page-content .hiring-editorial-header p{max-width:36ch;margin:0 0 5px;color:var(--muted)}
+.hiring-sequence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;margin:0;padding:0;background:#f7f7f5;border-radius:0 0 14px 14px;border-top:2px solid var(--coral)}
+.hiring-sequence li{padding:clamp(22px,3vw,42px);min-width:0}
+.hiring-sequence li+li{border-left:1px solid var(--line)}
+.hiring-index{display:block;margin-bottom:clamp(16px,2.5vw,32px);font-size:clamp(1.65rem,3vw,2.6rem);line-height:1;font-weight:500;letter-spacing:-.06em;color:var(--accent);font-variant-numeric:tabular-nums}
+#page-content .hiring-sequence h3{font-size:clamp(1.15rem,2.1vw,1.5rem);line-height:1.2;margin:0 0 10px}
+#page-content .hiring-sequence p{color:var(--muted);margin:0;max-width:30ch}
+.hiring-editorial-action{margin-top:24px}
+@media(max-width:700px){.hiring-editorial .hiring-editorial-header,.hiring-sequence{grid-template-columns:1fr}.hiring-sequence li+li{border-left:0;border-top:1px solid var(--line)}.hiring-index{margin-bottom:12px}}
+
+.sector-showcase{background:white;padding-block:clamp(48px,7vw,96px)}
+.sector-showcase>h2{margin-bottom:28px}
+.sector-showcase-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(24px,5vw,68px);align-items:center}
+.sector-spotlight{position:relative;isolation:isolate;display:flex;align-items:flex-end;overflow:hidden;min-height:390px;border-radius:16px;background:#17191c;color:white}
+.sector-spotlight img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .35s}
+.sector-spotlight:before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#101318f5 0%,#101318bb 35%,transparent 83%);z-index:-1}
+.sector-spotlight-copy{padding:clamp(24px,4vw,46px)}
+#page-content .sector-spotlight h3{font-size:clamp(1.8rem,3.9vw,3rem);line-height:1.08;margin:0 0 10px}
+.sector-spotlight p{max-width:40ch;margin:0 0 16px;color:#fff}
+.sector-spotlight-copy>span{border-bottom:1px solid #fff;font-weight:600}
+.sector-spotlight:hover img{transform:scale(1.035)}
+#page-content .sector-index h3{font-size:1.5rem;font-weight:600;line-height:1.2;letter-spacing:-.025em;margin:0 0 16px}
+.sector-index ul{list-style:none;margin:0 0 16px;padding:0;border-top:2px solid var(--coral)}
+.sector-index li{border-bottom:1px solid var(--line)}
+.sector-index li a{display:flex;align-items:center;gap:14px;min-height:60px;padding:12px 0;font-size:clamp(1rem,2.2vw,1.3rem);font-weight:500}
+.sector-index li a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+.sector-index-number{font-size:.8125rem;color:var(--accent);font-variant-numeric:tabular-nums}
+@media(max-width:760px){.sector-showcase-grid{grid-template-columns:1fr}.sector-spotlight{min-height:340px}}
+
+.sector-index-icon{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;color:var(--muted)}
+.sector-index a:hover .sector-index-icon{color:inherit}
+
+@media(prefers-reduced-motion:no-preference){
+#page-content>section:not(:first-child){transition:opacity .42s ease}
+.home-page #page-content>section.scroll-section-hidden:not(:focus-within){opacity:0;pointer-events:none}
+}
+
+/* Homepage editorial rhythm: restrained headings and shared section spacing. */
+.home-page{--home-space:clamp(48px,6.5vw,96px);--home-ink:#191919;--home-rule:#dedbd5}
+.home-page .banner-layout{min-height:clamp(470px,59vh,630px);padding-block:clamp(44px,6vw,88px) 40px}
+.home-page .banner-copy h1{font-size:clamp(2.65rem,5.6vw,5rem);line-height:1.05;letter-spacing:-.055em;max-width:17ch;text-wrap:balance}
+.home-page .banner-copy p{font-size:1.0625rem;line-height:1.55}
+.home-page .banner-services{gap:10px 16px}
+.home-page .home-overview{min-height:clamp(350px,40vw,590px)}
+#page-content .home-overview h2,#page-content .sector-showcase>h2,#page-content .home-hiring h2,#page-content .home-careers h2{font-size:clamp(1.85rem,3.4vw,2.75rem);line-height:1.14;letter-spacing:-.04em;font-weight:600;text-wrap:balance}
+.home-page .sector-showcase{padding-block:var(--home-space)}
+.home-page .sector-showcase-grid{align-items:stretch}
+.home-page .sector-index{align-self:center}
+.home-page .sector-index ul{border-top:1px solid var(--home-rule)}
+.home-page .sector-index li a{font-size:1.0625rem}
+.home-page .home-hiring{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(28px,7vw,96px);padding-block:var(--home-space);background:#f7f5f1;color:var(--home-ink)}
+.home-hiring-lead p{max-width:39ch;margin:16px 0 24px;color:var(--muted)}
+.home-hiring-options{margin:0;border-top:1px solid var(--home-rule)}
+.home-hiring-options div{padding:16px 0;border-bottom:1px solid var(--home-rule)}
+.home-hiring-options dt{font-size:1.0625rem;font-weight:600;line-height:1.35;margin-bottom:5px}
+.home-hiring-options dd{margin:0;color:var(--muted);font-size:1rem;line-height:1.5}
+.home-page .home-careers{margin-block:var(--home-space)}
+.home-page .home-careers .careers-image{min-height:0}
+.home-page .home-careers .careers-copy{padding:clamp(28px,5vw,68px)}
+@media(max-width:800px){.home-page .banner-layout{min-height:0}.home-page .home-hiring{grid-template-columns:1fr}.home-page .home-careers{margin-block:48px}}

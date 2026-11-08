@@ -10,7 +10,7 @@ const interactions = fs.readFileSync('public/interactions.js','utf8');
 const css = fs.readFileSync('app/site.css','utf8');
 for (const [view,title] of Object.entries({home:'Recruitment in London',about:'About us',expertise:'Recruitment services',candidates:'For candidates',contact:'Contact us',"hospitality":"Hospitality & Events","finance":"Finance","technology":"IT & Media","care-education":"Healthcare & Education","administration":"Administration"})) {
   const markup = renderToStaticMarkup(React.createElement(compiled.exports.default,{view}))
-    .replaceAll('/adolphus-logo.png','public/adolphus-logo.png').replaceAll('/banquet-hero.png','public/banquet-hero.png')
+    .replaceAll('/adolphus-logo.png','public/adolphus-logo.png').replaceAll('/banquet-hero.png','public/banquet-hero.png').replaceAll('/tower-bridge-night.png','public/tower-bridge-night.png')
     .replace(/href="\/(about|expertise|candidates|contact)(?=["?#])/g, 'href="$1.html')
     .replace(/href="\/expertise\/(hospitality|finance|technology|care-education|administration)(?=["?#])/g, 'href="$1.html')
     .replaceAll('href="/"','href="preview.html"');
