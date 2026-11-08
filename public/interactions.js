@@ -32,7 +32,11 @@
     }));
     revealSector();
     const form = document.getElementById('role-enquiry');
-    form.addEventListener('submit', function (event) {
+    if (form && location.search) {
+      const sector = new URLSearchParams(location.search).get('sector');
+      if (sector && Array.from(form.elements.sector.options).some(option => option.value === sector)) form.elements.sector.value = sector;
+    }
+    form?.addEventListener('submit', function (event) {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const data = new FormData(form);
