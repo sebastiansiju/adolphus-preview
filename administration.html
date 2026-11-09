@@ -494,6 +494,67 @@ body{font-weight:400}
 .home-page .home-careers .careers-image{min-height:0}
 .home-page .home-careers .careers-copy{padding:clamp(28px,5vw,68px)}
 @media(max-width:800px){.home-page .banner-layout{min-height:0}.home-page .home-hiring{grid-template-columns:1fr}.home-page .home-careers{margin-block:48px}}
+
+/* Reference layout: two-part introduction above five portrait service cards. */
+.sector-gallery{padding-block:clamp(32px,5vw,76px);background:#fff}
+.sector-gallery-panel{max-width:1440px;margin-inline:auto;padding:clamp(24px,5.3vw,90px);border-radius:24px;background:#fff;border:1px solid var(--line);color:#17191c}
+.sector-gallery-intro{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:24px 48px;margin-bottom:clamp(28px,5.7vw,88px)}
+#page-content .sector-gallery-intro h2{font:500 clamp(2rem,3.4vw,3.25rem)/1.12 var(--type-family);letter-spacing:-.045em}
+#page-content .sector-gallery-intro p{font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.55;max-width:40ch}
+.sector-gallery-action{display:inline-flex;align-items:center;min-height:46px;margin-top:18px;padding:9px 20px;border:1px solid #17191c;border-radius:999px;background:#17191c;color:#fff;font-size:.9375rem;font-weight:600}
+.sector-gallery-action:hover{background:var(--accent);border-color:var(--accent)}
+.sector-gallery-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.sector-gallery-card{position:relative;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;min-height:230px;aspect-ratio: .59;border-radius:14px;background:#17191c;color:white;padding:clamp(12px,1.45vw,22px)}
+.sector-gallery-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .3s ease}
+.sector-gallery-card:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#17191cf5, #17191c9c 26%,transparent 65%)}
+#page-content .sector-gallery-card h3{font:600 clamp(.9375rem,1.36vw,1.2rem)/1.4 var(--type-family);letter-spacing:-.015em;margin:0;overflow-wrap:normal}
+.sector-gallery-arrow{position:absolute;top:12px;right:12px;width:38px;height:38px;fill:none;stroke:white;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;border:1px solid #ffffff9c;border-radius:50%;background:#17191c80}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.sector-gallery-card:hover img{transform:scale(1.04)}}
+@media(max-width:850px){.sector-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.sector-gallery-intro{grid-template-columns:1fr;gap:14px}.sector-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sector-gallery-card{aspect-ratio:.7;min-height:190px}}
+
+/* Give the full-width London panorama more vertical room. */
+.home-page .home-overview{min-height:clamp(560px,63.7vw,900px)}
+@media(max-width:600px){.home-page .home-overview{min-height:0}}
+
+.home-page .banner-layout{grid-template-areas:'copy';grid-template-rows:1fr}
+
+/* Continuously rotating fan inspired by the supplied CardStack. */
+@media(prefers-reduced-motion:no-preference){
+  .sector-fan-ready .sector-fan-stage{position:relative;display:block;isolation:isolate;overflow:clip;container-type:inline-size;height:clamp(270px,39vw,445px);perspective:1000px}
+  .sector-fan-ready .sector-gallery-card{position:absolute;left:50%;bottom:28px;width:clamp(135px,27%,270px);height:calc(100% - 64px);min-height:0;aspect-ratio:auto;transform-origin:50% 90%;box-shadow:0 10px 22px #17191c25;animation:sector-fan-cycle 13.75s linear infinite;animation-delay:var(--fan-delay)}
+  .sector-fan-stage:focus-within .sector-gallery-card{animation-play-state:paused}
+  .sector-fan-ready .sector-gallery-card:focus-visible{z-index:20;outline-offset:-4px}
+}
+@keyframes sector-fan-cycle{
+  0%,5.4545%,100%{transform:translateX(-50%) translateY(-16px) rotate(0) scale(1.05);z-index:5;opacity:1}
+  20%,25.4545%{transform:translateX(calc(-50% - 15cqw)) translateY(7px) rotate(-9deg) scale(.91);z-index:4;opacity:1}
+  40%,45.4545%{transform:translateX(calc(-50% - 29cqw)) translateY(24px) rotate(-16deg) scale(.78);z-index:2;opacity:.85}
+  56%{transform:translateX(calc(-50% - 35cqw)) translateY(33px) rotate(-20deg) scale(.7);z-index:1;opacity:0}
+  57%{transform:translateX(calc(-50% + 35cqw)) translateY(33px) rotate(20deg) scale(.7);z-index:1;opacity:0}
+  60%,65.4545%{transform:translateX(calc(-50% + 29cqw)) translateY(24px) rotate(16deg) scale(.78);z-index:2;opacity:.85}
+  80%,85.4545%{transform:translateX(calc(-50% + 15cqw)) translateY(7px) rotate(9deg) scale(.91);z-index:4;opacity:1}
+}
+
+.sector-gallery-intro{align-items:start;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px clamp(24px,5vw,64px);margin-bottom:clamp(20px,3vw,40px)}
+#page-content .sector-gallery-intro h2{margin:0}
+#page-content .sector-gallery-intro p{margin:0;font-size:1rem;line-height:1.5;max-width:40ch}
+.sector-gallery-intro .sector-gallery-action{margin-top:14px}
+@media(max-width:600px){.sector-gallery-intro{grid-template-columns:1fr}}
+
+/* Keep the banquet composition intact on desktop, including ultrawide displays. */
+@media(min-width:801px){
+  .home-page .hero-banner{min-height:max(100svh,56.28vw);display:flex;flex-direction:column}
+  .home-page .banner-layout{flex:1;min-height:0}
+  .home-page .hero-banner .banquet-photo{object-fit:contain;object-position:right center;animation:none;transform:none}
+}
+
+/* Keep the desktop copy aligned with the header while the image fits the frame. */
+@media(min-width:801px){
+  .home-page .hero-banner{align-items:stretch}
+  .home-page .banner-layout{width:100%;align-items:center}
+  .home-page .banner-copy{align-self:center;justify-self:start;min-width:0}
+}
 </style></head><body><link rel="preload" as="image" href="public/adolphus-logo.png"/><main id="main-content" class="interior-page"><a class="skip-link" href="#page-content">Skip to content</a><header><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><nav id="primary-navigation" aria-label="Main navigation" class=""><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html" aria-current="page">Services</a><a href="candidates.html">Candidates</a><a href="contact.html">Contact</a></nav><a class="header-contact" href="contact.html">Let’s talk </a><button type="button" class="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">Menu</button></header><div id="page-content" tabindex="-1"><section class="service-detail content-section" aria-labelledby="service-title"><a class="inline-link" href="expertise.html"> All services</a><div class="section-heading"><h1 id="service-title">Administration</h1><p>Administrative and office support roles.</p></div><h2>Recruiting for your team</h2><p>Tell us about your office, responsibilities and preferred working arrangement.</p><div class="detail-actions"><a class="button" href="mailto:info@adolphusgroup.com?subject=Administration%20staffing%20enquiry">Enquire about hiring</a><a class="inline-link" href="candidates.html?sector=Administration#role-enquiry">Ask about roles </a></div></section></div><footer><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><div class="footer-links" role="navigation" aria-label="Footer navigation"><h2>Explore</h2><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html">Services</a><a href="candidates.html">Candidates</a><a href="contact.html">Contact</a></div><div class="footer-contact"><h2>Get in touch</h2><a href="mailto:info@adolphusgroup.com">info@adolphusgroup.com</a><a href="tel:+442076252931">020 7625 2931</a><p>2 Canfield Place, London NW6 3BT</p></div><div class="footer-bottom"><span>© 2026 Adolphus Group</span></div></footer></main><script>// Shared interactions for the Next.js page and standalone preview.
 (function () {
   function init() {
@@ -581,6 +642,7 @@ body{font-weight:400}
       window.addEventListener('pageshow', updateSections);
       updateSections();
     }
+    document.querySelector('.sector-fan')?.classList.add('sector-fan-ready');
     const motion = document.querySelector('#motion-toggle');
     motion?.addEventListener('click', () => {
       const paused = document.querySelector('.perspective-room').classList.toggle('paused');

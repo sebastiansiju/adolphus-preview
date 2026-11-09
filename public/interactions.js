@@ -85,6 +85,7 @@
       window.addEventListener('pageshow', updateSections);
       updateSections();
     }
+    document.querySelector('.sector-fan')?.classList.add('sector-fan-ready');
     const motion = document.querySelector('#motion-toggle');
     motion?.addEventListener('click', () => {
       const paused = document.querySelector('.perspective-room').classList.toggle('paused');
