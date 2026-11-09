@@ -527,13 +527,13 @@ body{font-weight:400}
   .sector-fan-ready .sector-gallery-card:focus-visible{z-index:20;outline-offset:-4px}
 }
 @keyframes sector-fan-cycle{
-  0%,5.4545%,100%{transform:translateX(-50%) translateY(-16px) rotate(0) scale(1.05);z-index:5;opacity:1}
-  20%,25.4545%{transform:translateX(calc(-50% - 15cqw)) translateY(7px) rotate(-9deg) scale(.91);z-index:4;opacity:1}
-  40%,45.4545%{transform:translateX(calc(-50% - 29cqw)) translateY(24px) rotate(-16deg) scale(.78);z-index:2;opacity:.85}
-  56%{transform:translateX(calc(-50% - 35cqw)) translateY(33px) rotate(-20deg) scale(.7);z-index:1;opacity:0}
-  57%{transform:translateX(calc(-50% + 35cqw)) translateY(33px) rotate(20deg) scale(.7);z-index:1;opacity:0}
-  60%,65.4545%{transform:translateX(calc(-50% + 29cqw)) translateY(24px) rotate(16deg) scale(.78);z-index:2;opacity:.85}
-  80%,85.4545%{transform:translateX(calc(-50% + 15cqw)) translateY(7px) rotate(9deg) scale(.91);z-index:4;opacity:1}
+  0%,5.4545%,100%{transform:translateX(-50%) scale(1.05);z-index:5;opacity:1}
+  20%,25.4545%{transform:translateX(calc(-50% - 15cqw)) scale(.91);z-index:4;opacity:1}
+  40%,45.4545%{transform:translateX(calc(-50% - 29cqw)) scale(.78);z-index:2;opacity:.85}
+  56%{transform:translateX(calc(-50% - 35cqw)) scale(.7);z-index:1;opacity:0}
+  57%{transform:translateX(calc(-50% + 35cqw)) scale(.7);z-index:1;opacity:0}
+  60%,65.4545%{transform:translateX(calc(-50% + 29cqw)) scale(.78);z-index:2;opacity:.85}
+  80%,85.4545%{transform:translateX(calc(-50% + 15cqw)) scale(.91);z-index:4;opacity:1}
 }
 
 .sector-gallery-intro{align-items:start;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px clamp(24px,5vw,64px);margin-bottom:clamp(20px,3vw,40px)}
@@ -554,6 +554,63 @@ body{font-weight:400}
   .home-page .hero-banner{align-items:stretch}
   .home-page .banner-layout{width:100%;align-items:center}
   .home-page .banner-copy{align-self:center;justify-self:start;min-width:0}
+}
+
+/* Landscape cards move along a single horizontal centreline. */
+.sector-fan .sector-gallery-card{aspect-ratio:16/10;min-height:0}
+@media(prefers-reduced-motion:no-preference){
+  .sector-fan-ready .sector-fan-stage{height:clamp(180px,30vw,325px);perspective:none}
+  .sector-fan-ready .sector-gallery-card{top:50%;bottom:auto;width:clamp(150px,39%,410px);height:auto;aspect-ratio:16/10;transform-origin:center;animation-name:sector-horizontal-cycle}
+}
+@keyframes sector-horizontal-cycle{
+  0%,5.4545%,100%{transform:translate(-50%,-50%) scale(1);z-index:5;opacity:1}
+  20%,25.4545%{transform:translate(calc(-50% - 22cqw),-50%) scale(.86);z-index:4;opacity:1}
+  40%,45.4545%{transform:translate(calc(-50% - 38cqw),-50%) scale(.72);z-index:2;opacity:.85}
+  56%{transform:translate(calc(-50% - 48cqw),-50%) scale(.68);z-index:1;opacity:0}
+  57%{transform:translate(calc(-50% + 48cqw),-50%) scale(.68);z-index:1;opacity:0}
+  60%,65.4545%{transform:translate(calc(-50% + 38cqw),-50%) scale(.72);z-index:2;opacity:.85}
+  80%,85.4545%{transform:translate(calc(-50% + 22cqw),-50%) scale(.86);z-index:4;opacity:1}
+}
+
+/* Full-width sector carousel with no surrounding frame. */
+.home-page .sector-gallery{padding-inline:0}
+.home-page .sector-gallery-panel{max-width:none;padding:clamp(24px,5vw,72px) 0;border:0;border-radius:0}
+.home-page .sector-gallery-intro{padding-inline:var(--gutter)}
+.home-page .sector-fan-stage{width:100%}
+.home-page .sector-fan:not(.sector-fan-ready) .sector-fan-stage{padding-inline:var(--gutter)}
+@media(prefers-reduced-motion:reduce){.home-page .sector-fan-stage{padding-inline:var(--gutter)}}
+@media(prefers-reduced-motion:no-preference){.home-page .sector-fan-ready .sector-gallery-card{width:clamp(165px,40%,500px)}.home-page .sector-fan-ready .sector-fan-stage{height:clamp(195px,31vw,365px)}}
+
+/* Mobile hero fills the opening viewport, with copy in normal flow. */
+@media(max-width:800px){
+  .home-page .hero-banner{display:flex;flex-direction:column;align-items:stretch;min-height:100svh}
+  .home-page .hero-banner .banquet-photo{object-fit:cover;object-position:65% center;animation:none;transform:none}
+  .home-page .hero-banner .banner-art:after{background:linear-gradient(90deg,#fffffff2,#ffffffb8 65%,#ffffff80)}
+  .home-page .banner-layout{flex:1;width:100%;align-items:center;padding-block:clamp(32px,8svh,88px)}
+  .home-page .banner-copy{width:100%;min-width:0;align-self:center}
+  .home-page .banner-copy h1{max-width:none;font-size:clamp(2.35rem,8.5vw,4rem)}
+  #page-content .banner-copy p{max-width:46ch}
+  .home-page .banner-copy .banner-actions{gap:10px}
+  .home-page .banner-actions>a{justify-content:center}
+}
+@media(max-width:520px){.home-page .banner-actions>a{flex:1 1 auto;padding-inline:14px}}
+
+/* Mobile hero: a shared left edge and a compact reading rhythm. */
+@media(max-width:800px){
+  .home-page .hero-banner>header{padding-block:12px;min-height:76px}
+  .home-page .banner-layout{align-items:start;padding-block:clamp(44px,9svh,86px) 48px}
+  .home-page .banner-copy{align-self:start;max-width:34rem}
+  #page-content .banner-copy h1{font-size:clamp(2.125rem,8vw,3.5rem);line-height:1.1;letter-spacing:-.045em;text-wrap:balance;max-width:19ch;margin:0 0 18px}
+  #page-content .banner-copy p{font-size:1rem;line-height:1.5;max-width:36ch}
+  .home-page .banner-copy .banner-actions{margin-top:22px;gap:10px;justify-content:flex-start;align-items:stretch}
+  .home-page .banner-actions>a{flex:0 1 auto;padding-inline:16px;font-size:.9375rem;line-height:1.3;text-align:center;min-height:48px}
+  .home-page .hero-banner .banner-art:after{background:linear-gradient(90deg,#fffefbf5,#fffefbc9 63%,#fffefb60)}
+}
+@media(max-width:370px){.home-page .banner-actions>a{flex:1 1 100%}}
+
+@media(max-width:800px){
+  .home-page .banner-layout{align-items:end;padding-block:32px clamp(32px,7svh,72px)}
+  .home-page .banner-copy{align-self:end;text-align:left}
 }
 </style></head><body><link rel="preload" as="image" href="public/adolphus-logo.png"/><main id="main-content" class="interior-page"><a class="skip-link" href="#page-content">Skip to content</a><header><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><nav id="primary-navigation" aria-label="Main navigation" class=""><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html" aria-current="page">Services</a><a href="candidates.html">Candidates</a><a href="contact.html">Contact</a></nav><a class="header-contact" href="contact.html">Let’s talk </a><button type="button" class="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">Menu</button></header><div id="page-content" tabindex="-1"><section class="expertise editorial-expertise services-page" id="expertise" aria-labelledby="services-title"><div class="expertise-heading"><h1 id="services-title">Recruitment services</h1><p>Permanent, interim and temporary staffing across London.</p></div><a class="expertise-feature" href="hospitality.html"><div class="feature-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="An inviting restaurant prepared for service"/></div><div class="feature-content"><h3>Hospitality &amp; Events</h3><p>We recruit chefs, front-of-house teams and event staff for venues where the quality of service matters. Speak to us about permanent appointments, interim cover or temporary staffing.</p><div class="feature-bottom"><span>Explore hospitality recruitment</span></div></div></a><div class="expertise-cards"><a class="expertise-card" href="finance.html"><div class="card-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt=""/></div><div class="card-content"><h3>Finance</h3><p>Accountants and finance professionals for your team.</p><span class="card-action">Explore Finance </span></div></a><a class="expertise-card" href="technology.html"><div class="card-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt=""/></div><div class="card-content"><h3>IT &amp; Media</h3><p>Software developers, technology specialists and media professionals.</p><span class="card-action">Explore IT &amp; Media </span></div></a><a class="expertise-card" href="care-education.html"><div class="card-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt=""/></div><div class="card-content"><h3>Healthcare &amp; Education</h3><p>Care staff, teachers and classroom support.</p><span class="card-action">Explore Healthcare &amp; Education </span></div></a></div><div class="expertise-footnote">Also recruiting for administrative roles. <a href="administration.html">Explore administration </a></div></section></div><footer><a class="brand brand-logo" href="preview.html" aria-label="Adolphus Group home"><img src="public/adolphus-logo.png" alt="Adolphus Group — recruitment consultants" width="2160" height="720"/></a><div class="footer-links" role="navigation" aria-label="Footer navigation"><h2>Explore</h2><a href="preview.html">Home</a><a href="about.html">About us</a><a href="expertise.html">Services</a><a href="candidates.html">Candidates</a><a href="contact.html">Contact</a></div><div class="footer-contact"><h2>Get in touch</h2><a href="mailto:info@adolphusgroup.com">info@adolphusgroup.com</a><a href="tel:+442076252931">020 7625 2931</a><p>2 Canfield Place, London NW6 3BT</p></div><div class="footer-bottom"><span>© 2026 Adolphus Group</span></div></footer></main><script>// Shared interactions for the Next.js page and standalone preview.
 (function () {
