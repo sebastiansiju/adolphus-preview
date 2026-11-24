@@ -1,0 +1,4 @@
+/* Import when a vendor component is used. Keep Tailwind's global reset out of the site. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);

@@ -1,4 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(/fonts/cormorant-garamond-600.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/inter-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(/fonts/inter-500.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(/fonts/inter-600.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(/fonts/inter-700.ttf) format('truetype');
+}
 :root{--ink:#191919;--muted:#595959;--paper:#fafaf8;--line:#dcdcd7;--accent:#ba3e13;--gutter:clamp(24px,5.5vw,88px);--section:clamp(64px,8vw,112px)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:5px}h1,h2,h3,p{margin:0}h1,h2,h3{font-weight:500;text-wrap:balance}h2{font-size:clamp(32px,3.7vw,52px);line-height:1.16;letter-spacing:-.04em}h3{font-size:24px;line-height:1.25;letter-spacing:-.025em}em{font-style:normal;color:var(--accent)}p{max-width:58ch}img{display:block;max-width:100%}.skip-link{position:absolute;top:-100px;left:20px;z-index:20;padding:12px 20px;background:white}.skip-link:focus{top:10px}
 header{min-height:96px;padding:12px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:32px;background:var(--paper)}.brand-logo{position:relative;display:block;width:250px;height:64px;overflow:hidden;flex-shrink:0}.brand-logo img{position:absolute;top:50%;transform:translateY(-50%);width:100%;height:auto}nav{display:flex;gap:28px}nav a{font-size:14px;min-height:44px;display:flex;align-items:center}nav a:hover{color:var(--accent)}.header-contact{border:1px solid #aaa;border-radius:4px;padding:10px 22px;font-size:14px;white-space:nowrap}.header-contact span{margin-left:22px}.header-contact:hover{background:var(--ink);color:white}.menu{display:none}
@@ -612,3 +646,167 @@ body{font-weight:400}
   .home-page .banner-layout{align-items:end;padding-block:32px clamp(32px,7svh,72px)}
   .home-page .banner-copy{align-self:end;text-align:left}
 }
+
+
+/* Register the flame overlay to the same image bounds at each crop. */
+.banquet-shot{position:absolute;inset:0}
+
+/* Motion components used by the Next.js site and offline preview. */
+#role-enquiry button[hidden] { display: none; }
+.about-photo-strip { overflow: hidden; margin: 0 auto clamp(24px, 5vw, 70px); }
+.about-photo-strip > div { overflow: hidden; }
+.about-photo-strip > div > div { display: flex; width: max-content; }
+.about-photo-strip > div > div > div { flex: none; overflow: hidden; }
+.about-photo-strip img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.forge-draft-mark { display: inline-flex; margin-inline-end: .5rem; vertical-align: middle; }
+.forge-draft-mark .relative { position: relative; display: grid; place-items: center; }
+.forge-draft-mark .absolute { position: absolute; inset: 0; display: grid; place-items: center; color: #17191c; }
+.forge-draft-mark .absolute svg { width: 10px; height: 10px; }
+.forge-draft-mark .relative > svg { transform: rotate(-90deg); }
+
+
+
+.home-page .hero-banner,
+.home-page .hero-banner *,
+.home-page .hero-banner *::before,
+.home-page .hero-banner *::after {
+  animation: none;
+  transition: none;
+}
+
+.sector-loop { overflow: hidden; }
+.sector-loop .sector-gallery-card[aria-hidden="true"] { display: none; }
+@keyframes sector-scroll-left {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-page .sector-loop .sector-fan-stage {
+    display: flex;
+    width: max-content;
+    gap: 0;
+    padding: 0;
+    animation: sector-scroll-left 36s linear infinite;
+  }
+  .sector-loop .sector-gallery-card {
+    width: clamp(215px, 39vw, 460px);
+    flex: none;
+    margin-inline-end: 12px;
+  }
+  .sector-loop .sector-gallery-card[aria-hidden="true"] { display: block; }
+  .sector-loop:focus-within { overflow-x: auto; }
+  .home-page .sector-loop:focus-within .sector-fan-stage { animation: none; }
+  .sector-loop:focus-within .sector-gallery-card[aria-hidden="true"] { display: none; }
+}
+
+
+
+/* Display type for page and section titles. */
+:root { --type-display: "Cormorant Garamond", Georgia, serif; }
+#page-content h1,
+#page-content h2,
+#page-content .banner-copy h1,
+#page-content .sector-gallery-intro h2,
+#page-content .home-overview h2,
+#page-content .home-hiring h2,
+#page-content .home-careers h2 {
+  font-family: var(--type-display);
+  font-weight: 600;
+  letter-spacing: -.025em;
+}
+#page-content .banner-copy h1 { line-height: 1.1; }
+
+
+/* Video fills the hero without moving its text or layout. */
+.home-page .hero-banner .banquet-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+@media (prefers-reduced-motion:reduce) { .banquet-video { display:none; } }
+
+/* Warm evening grade for the banquet film and its static fallback. */
+.home-page .hero-banner { background:#1b120b; }
+.home-page .hero-banner .banquet-video,
+.home-page .hero-banner .banquet-photo {
+  filter:brightness(.48) sepia(.48) saturate(1.15);
+}
+.home-page .hero-banner .banner-art:after {
+  background:linear-gradient(90deg,rgba(20,12,6,.78) 0%,rgba(35,20,8,.45) 48%,rgba(60,32,8,.12) 100%);
+}
+.home-page #hero-title { color:#fff7e7; }
+.home-page .banner-copy p { color:#f4e5cd; }
+.home-page .hero-banner .banner-primary { background:#f0cc8b;color:#261a0d;border-color:#f0cc8b; }
+.home-page .hero-banner .banner-secondary { background:rgba(30,19,10,.55);color:#fff5e3;border-color:#c9ad80; }
+.home-page .hero-banner .brand-logo { background:#fffaf0;border-radius:8px;padding:10px 14px; }
+@media(max-width:800px) {
+  .home-page .hero-banner .banner-art:after {
+    background:linear-gradient(0deg,rgba(18,11,5,.88),rgba(30,18,7,.50) 52%,rgba(45,27,10,.15));
+  }
+}
+
+/* Ivory wordmark sits directly on the evening hero. */
+.home-page .hero-banner .brand-logo {
+  background:transparent;
+  padding:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  width:clamp(145px,15vw,195px);
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+}
+.home-page .hero-banner .brand-logo img {
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  filter:brightness(0) invert(96%) sepia(12%) saturate(450%) hue-rotate(338deg);
+}
+@media(max-width:800px) {
+  .home-page .hero-banner .brand-logo { width:clamp(140px,37vw,170px);height:auto;min-height:44px; }
+}
+
+/* Match hero copy to the ivory wordmark. */
+.home-page #hero-title,
+.home-page .hero-banner .banner-copy p {
+  color:#fff7e7;
+}
+
+/* Five-panel opening reveal, with a failsafe if scripts fail to load. */
+.opening-reveal { position:fixed;inset:0;z-index:1000;pointer-events:none;display:grid;place-items:center;animation:opening-failsafe 0s 5s forwards; }
+.opening-panels { position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr); }
+.opening-panel { background:#19140f;height:100%;width:calc(100% + 1px);will-change:transform; }
+.opening-logo { position:relative;width:clamp(200px,24vw,320px);height:auto;filter:brightness(0) invert(96%) sepia(12%) saturate(450%) hue-rotate(338deg); }
+@keyframes opening-failsafe { to {visibility:hidden;} }
+@media(prefers-reduced-motion:reduce) { .opening-reveal {display:none;} }
+
+/* Section palette adapted from the supplied orange-and-white reference. */
+.home-page {
+  --section-orange:#e64600;
+  --section-grey:#f5f5f4;
+  --home-ink:#171717;
+  --home-rule:#dededb;
+}
+.home-page .sector-gallery,
+.home-page .sector-gallery-panel { background:#fff;color:#171717; }
+.home-page .home-hiring { background:var(--section-grey);color:#171717; }
+.home-page .home-hiring-lead p,
+.home-page .home-hiring-options dd { color:#595959; }
+.home-page .home-hiring-options,
+.home-page .home-hiring-options div { border-color:#dededb; }
+.home-page .home-careers { background:#f5f5f4;border-color:#e8e8e5;border-radius:20px;overflow:hidden; }
+.home-page .home-careers .careers-copy { background:#f5f5f4;color:#171717; }
+.home-page .home-careers .careers-copy p { color:#595959; }
+.home-page .home-careers .button { background:var(--section-orange);color:#fff;border-color:var(--section-orange); }
+.home-page .home-hiring .button,
+.home-page .sector-gallery-action { background:#171717;color:#fff;border-color:#171717; }
+.home-page footer {
+  background:#ce3900;color:#fff;
+  margin:0 clamp(12px,3vw,40px) clamp(12px,3vw,40px);
+  border-radius:24px;
+  border:0;
+}
+.home-page footer p,
+.home-page footer a,
+.home-page footer h3,
+.home-page footer .footer-bottom { color:#fff; }
+.home-page footer .brand-logo img { filter:brightness(0) invert(1); }
+.home-page footer .footer-bottom { border-color:rgba(255,255,255,.32); }
+.home-page footer a:hover { color:#fff0d8; }
+.home-page footer a:focus-visible { outline:2px solid #fff;outline-offset:5px; }

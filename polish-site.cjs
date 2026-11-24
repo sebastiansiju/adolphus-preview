@@ -1,0 +1,24 @@
+const fs = require('fs');
+const p = 'app/site-page.tsx';
+let s = fs.readFileSync(p, 'utf8');
+s = s.replace("  const service = services.find", `  const sectorPhotos: Record<string,string> = {
+    finance:'photo-1454165804606-c3d57bc86b40', technology:'photo-1498050108023-c5249f4df085',
+    'care-education':'photo-1509062522246-3755977927d7', administration:'photo-1497366811353-6870744d04b2'
+  };
+  const service = services.find`);
+s = s.replace('Recruitment built around<br/><em>your business.</em>', 'Recruitment built around <em>your business.</em>');
+s = s.replace('Find your<br/><em>next opportunity.</em>', 'Find your <em>next opportunity.</em>');
+s = s.replace('Explore roles </a>', 'Find your next role </a>');
+s = s.replace("['care-education','Healthcare & Education','Care staff, teachers and classroom support.','photo-1509062522246-3755977927d7']", "['care-education','Healthcare & Education','Care staff, teachers and classroom support.','photo-1509062522246-3755977927d7'],\n['administration','Administration','Administrative and office support for your team.','photo-1497366811353-6870744d04b2']");
+s = s.replace('<div className="expertise-footnote">Also recruiting for administrative roles. <a href="/expertise/administration">Explore administration </a></div>', '');
+s = s.replace('<div className="section-heading"><h1 id="service-title">{service[1]}</h1><p>{service[2]}</p></div>', `<div className="sector-detail-hero"><div><span className="section-caption">Specialist recruitment · London</span><h1 id="service-title">{service[1]}</h1><p>{service[2]}</p><a className="button" href={'mailto:info@adolphusgroup.com?subject='+encodeURIComponent(service[1]+' staffing enquiry')}>Discuss your requirements</a></div><img src={'https://images.unsplash.com/'+sectorPhotos[view]+'?auto=format&fit=crop&w=1200&q=85'} alt="" width="1200" height="900"/></div>`);
+s = s.replace('<><h2>Recruiting for your team</h2><p>{service[3]}</p></>', `<><div className="sector-brief"><div><span className="section-caption">For employers</span><h2>People who fit<br/>the way you work.</h2></div><div><p>{service[3]}</p><p>Speak with a consultant about permanent recruitment, interim cover or temporary support.</p></div></div><div className="sector-next"><article><h3>Share your brief</h3><p>Tell us about the responsibilities, working pattern and experience you need.</p></article><article><h3>Talk through the options</h3><p>Discuss the requirements and the next steps with our team.</p></article><article><h3>Looking for work?</h3><p>Introduce yourself and tell us about your experience and availability.</p><a className="inline-link" href={'/candidates?sector='+encodeURIComponent(service[4])+'#role-enquiry'}>Enquire about roles</a></article></div></>`);
+const oldContact = '<section className="contact" id="contact"><h2>We’d be pleased<br/><em>to hear from you.</em></h2><a className="button orange" href="mailto:info@adolphusgroup.com">Email our team </a><a className="phone" href="tel:+442076252931">020 7625 2931</a></section>';
+s = s.replace(oldContact, `<section className="contact contact-editorial" id="contact"><div className="contact-lead"><span className="section-caption">A conversation starts here</span><h2>Let’s find your<br/>next great fit.</h2><p>Hiring for your team or considering your next role? Tell us what you have in mind.</p><a className="button" href="mailto:info@adolphusgroup.com">Email our team</a></div><div className="contact-methods"><div><span className="section-caption">Email</span><a href="mailto:info@adolphusgroup.com">info@adolphusgroup.com</a></div><div><span className="section-caption">Call</span><a href="tel:+442076252931">020 7625 2931</a></div><div><span className="section-caption">Find us</span><address>2 Canfield Place<br/>London NW6 3BT</address><a className="inline-link" href="https://www.google.com/maps/search/?api=1&query=2%20Canfield%20Place%20London%20NW6%203BT" target="_blank" rel="noopener noreferrer">Get directions <span className="sr-only">(opens in a new tab)</span></a></div><div><span className="section-caption">Looking for work?</span><a className="inline-link" href="/candidates#role-enquiry">Introduce yourself to our team</a></div></div></section>`);
+fs.writeFileSync(p,s);
+let layout=fs.readFileSync('app/layout.tsx','utf8').replace("import './reference-design.css';", "import './reference-design.css';\nimport './site-polish.css';");
+// Only preload the two fonts needed for first paint.
+layout=layout.replace("['antonio-variable', 'cormorant-garamond-600', 'inter-400', 'inter-500', 'inter-600', 'inter-700']", "['cormorant-garamond-600', 'inter-400']");
+fs.writeFileSync('app/layout.tsx',layout);
+let render=fs.readFileSync('render-preview.cjs','utf8').replace("fs.readFileSync('app/reference-design.css','utf8')", "fs.readFileSync('app/reference-design.css','utf8') + fs.readFileSync('app/site-polish.css','utf8')");
+fs.writeFileSync('render-preview.cjs',render);

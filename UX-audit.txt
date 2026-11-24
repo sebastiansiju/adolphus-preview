@@ -1,0 +1,69 @@
+ADOLPHUS GROUP — PAGE AUDIT & IMPLEMENTATION
+22 November 2026
+
+Direction: editorial luxury, clear content hierarchy, consistent controls and restrained movement. This follows the approved Zensho reference while retaining Adolphus branding and banquet imagery.
+
+Home
+- Fixed hero actions aligning to the right despite centred headings.
+- Removed the opaque navigation background and repaired active-link contrast.
+- Unified sector surfaces and CTA styling; retained static sector cards.
+- Balanced section spacing and footer contrast.
+- Intro now runs once per browser session instead of on every home navigation.
+
+About
+- Reduced oversized title-to-content gaps.
+- Replaced the narrow, isolated introduction with aligned two-column copy.
+- Fixed joined words around the emphasis element.
+- Unified values and process typography and spacing.
+
+Services
+- Administration now has a full card, rather than a low-visibility footnote.
+- Removed heavy card borders and inconsistent shadows.
+- Standardised card typography, image ratios, link size and spacing.
+
+Hospitality
+- Aligned content to the shared page gutters.
+- Balanced heading, photo and CTA dimensions.
+- Standardised role descriptions and employer/candidate panels.
+
+Finance / IT & Media / Healthcare & Education / Administration
+- Replaced sparse text-only introductions with sector-specific imagery and split layouts.
+- Added clear employer brief guidance and candidate enquiry routes.
+- Retained preselected sectors when entering the candidate form.
+
+Candidates
+- Reduced the oversized page introduction and corrected heading spacing.
+- Improved form spacing, input weight, borders, focus visibility and mobile layout.
+- Verified the prepare-email interaction without sending an email.
+- Kept explicit disclosure that this is an email handoff, not a submission service.
+
+Contact
+- Replaced the nearly empty central CTA with a structured contact layout.
+- Added visible email, telephone, office address, directions and candidate route.
+
+Shared UX
+- Consistent headers, footer, logo sizing, button shapes and minimum control heights.
+- Fixed a responsive specificity conflict that showed the desktop CTA on mobile and pushed the menu outside the viewport.
+- Section snapping avoids interruption while a form, disclosure or navigation control has focus.
+- Reduced-motion support remains in place.
+
+Verification
+- Inspected all ten pages in the browser at desktop and 390px mobile viewport settings.
+- No horizontal page overflow detected after the mobile header correction.
+- One H1 per page in the mobile audit; no completed broken image loads detected.
+- All local links in all ten generated pages resolve to existing files.
+- Tested mobile menu navigation, candidate email preparation and sector query preselection.
+- TypeScript check passed. Standalone previews regenerated.
+
+Limitations
+- This was a local static-preview audit, not a production deployment or complete WCAG certification.
+- The candidate enquiry requires an email application; no backend, upload storage, live vacancy feed or delivery tracking was added.
+- External photography remains dependent on its image host. No new business claims, testimonials or performance metrics were invented.
+
+RESEARCH-LED REFINEMENT
+- Unified Cormorant Garamond headings and Inter body copy.
+- Rebalanced hero, editorial image composition, static sectors and hiring/candidate sections.
+- Added sector role examples, candidate steps and employer brief guidance.
+- Removed forced scroll snapping and hidden-text section reveals.
+- Checked all ten routes at 390px and 1440px: no horizontal overflow on interior routes; homepage visually checked at both widths.
+- TypeScript and preview rendering passed. Email handoff remains explicit; no backend delivery or invented testimonials added.
