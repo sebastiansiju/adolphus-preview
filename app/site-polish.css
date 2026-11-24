@@ -184,3 +184,32 @@ html{scroll-padding-top:24px}body{background:#fff}#main-content{width:100%;max-w
 @media(max-width:540px){.home-page .watermelon-bento{grid-template-columns:1fr}.home-page .watermelon-bento .sector-static-card{grid-column:1!important;min-height:0;padding:20px}.home-page .watermelon-bento .sector-static-card img{height:190px!important}.home-page .watermelon-bento .sector-static-card:nth-child(4) img{order:0;margin-top:0}.home-page .watermelon-bento .sector-static-card:nth-child(4) .sector-static-copy{padding-top:24px}}
 @media(prefers-reduced-motion:reduce){.home-page .watermelon-bento .sector-static-card{transition:none}.home-page .watermelon-bento .sector-static-card:hover{transform:none}}
 
+
+/* Consistent text measure and vertical rhythm. */
+#main-content #page-content :is(h1,h2,h3){letter-spacing:-.025em;text-wrap:balance}
+#main-content #page-content h2{font-size:clamp(32px,3.3vw,46px);line-height:1.14;margin:0 0 20px}
+#main-content #page-content h3{font-size:clamp(25px,2.2vw,30px);line-height:1.2;margin:0 0 12px}
+#main-content #page-content p{font-size:16px;line-height:1.65;margin:0 0 20px}
+#main-content #page-content p:last-child{margin-bottom:0}
+#main-content #page-content :is(.section-heading,.hospitality-guide-intro,.overview-editorial)>p{max-width:62ch}
+#main-content #page-content :is(.sector-gallery-intro,.role-responsibilities,.role-preparation,.role-next){align-items:start}
+#main-content #page-content .sector-gallery-intro p{max-width:44ch}
+#main-content #page-content .watermelon-bento .sector-static-card:nth-child(4) .sector-static-copy{align-items:flex-start;text-align:left}
+#main-content #page-content .watermelon-bento .sector-static-card h3{font-size:30px;line-height:1.2;margin-bottom:12px}
+#main-content #page-content .watermelon-bento .sector-static-card p{font-size:15px;line-height:1.6}
+#main-content #page-content .role-detail h1{font-size:clamp(44px,5.5vw,72px);line-height:1.05;margin:0 0 24px}
+#main-content #page-content .role-detail h2{font-size:clamp(30px,3vw,40px);max-width:24ch;line-height:1.16;margin:0 0 20px;text-wrap:pretty}
+#main-content #page-content .role-detail p{max-width:55ch}
+#main-content #page-content .role-detail .sector-detail-hero p{font-size:18px;line-height:1.6;max-width:35ch;margin-bottom:28px}
+.role-responsibilities,.role-next{gap:clamp(32px,6vw,80px);padding-block:64px}
+.role-preparation{gap:clamp(32px,5vw,64px);padding:clamp(24px,4vw,48px);margin-block:0 64px}
+.role-detail ul{margin:0;padding-left:20px}
+.role-detail li{font-size:16px;line-height:1.65;padding:0 0 12px 4px}
+.role-detail li:last-child{padding-bottom:0}
+.role-preparation p+ul{margin-top:24px}
+.role-next .button{margin-top:4px}
+#main-content #page-content .hospitality-guide .process-grid p{font-size:16px;line-height:1.65}
+#main-content #page-content .hospitality-guide .process-grid h3{font-size:28px;line-height:1.2;margin-bottom:14px}
+#main-content #page-content .banner-copy p{line-height:1.65;margin:28px auto 0}
+@media(max-width:800px){.role-responsibilities,.role-next{padding-block:40px;gap:28px}.role-preparation{margin-bottom:40px;gap:36px}#main-content #page-content .role-detail h2{max-width:none}#main-content #page-content .role-detail .sector-detail-hero p{font-size:17px}}
+@media(max-width:540px){#main-content #page-content h2{font-size:32px;line-height:1.15;margin-bottom:18px}#main-content #page-content h3{font-size:26px;line-height:1.2}#main-content #page-content .role-detail h1{font-size:44px}#main-content #page-content .role-detail h2{font-size:30px}}

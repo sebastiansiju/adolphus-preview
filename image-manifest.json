@@ -1,0 +1,87 @@
+{
+  "generator": "Built-in image_gen",
+  "assets": [
+    {
+      "key": "kitchen",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-23b74298-bdd1-45e8-9cf8-c864cd3cdae5.png"
+    },
+    {
+      "key": "front-of-house",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-54c3d7f1-a7c5-4065-bec0-4b4666f700f5.png"
+    },
+    {
+      "key": "event-staffing",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-1e0ad3ad-a62b-417a-9dc7-0be221db10a1.png"
+    },
+    {
+      "key": "hospitality",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-7e86afbf-23c2-4e24-ac0d-58380833549d.png"
+    },
+    {
+      "key": "finance",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-23366bad-c272-4035-9e27-76f4f429c8e3.png"
+    },
+    {
+      "key": "technology",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-be4c3116-0487-401b-bb4e-617d7367e191.png"
+    },
+    {
+      "key": "care-education",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-73175498-523d-49d6-b62c-9ba8370d2a64.png"
+    },
+    {
+      "key": "administration",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-99b7ca94-7152-4b03-bdb3-73679deaff75.png"
+    },
+    {
+      "key": "about",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-9b3d5fc8-6550-4c74-b044-2c6e82db7095.png"
+    },
+    {
+      "key": "candidates",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-506f8aa8-25de-4e8e-87e9-49a8a397a034.png"
+    },
+    {
+      "key": "services-hospitality",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-1d65e8cb-6a20-4e41-b22d-569d51acd5c4.png"
+    },
+    {
+      "key": "services-finance",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-ebfecd93-3676-4d8f-8b17-4212c079fa93.png"
+    },
+    {
+      "key": "services-technology",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-4cbb86c6-ef5e-42b4-9669-f3bd16121385.png"
+    },
+    {
+      "key": "services-care",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-2c0b44fb-9ae5-4f9f-9957-188e7644a455.png"
+    },
+    {
+      "key": "services-administration",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-51803ab2-f569-45b7-979b-da4529911ce4.png"
+    },
+    {
+      "key": "home-careers",
+      "path": "C:\\Users\\sebas\\.codex\\generated_images\\01a1750e-f8ab-7603-84b6-f91b835699ee\\exec-e1032f8a-7d15-44d1-8f04-61d98bac590e.png"
+    }
+  ],
+  "prompts": {
+    "front-of-house": "An adult waiter in a crisp white shirt and charcoal waistcoat carefully arranging linen and crystal glasses in an elegant London dining room before service, eye-level medium-wide candid view.",
+    "event-staffing": "Two adult event stewards in black tailored suits reviewing a room setup beside rows of chairs and a small floral arrangement in a bright contemporary London event venue, wide architectural composition.",
+    "hospitality": "A hotel restaurant manager giving a quiet pre-service briefing to three adult hospitality colleagues near a brass reception desk, upscale British boutique hotel, candid not posed.",
+    "finance": "An adult finance professional reviewing printed financial tables with a colleague in a bright London office, side angle with calculator and neat paperwork foreground, no legible sensitive information.",
+    "technology": "Two adult software specialists collaborating at a large monitor in a modest contemporary London studio, screen shows indistinct code, daylight, thoughtful authentic working scene.",
+    "care-education": "An adult vocational training tutor demonstrating a practical learning activity to two adult learners at a bright classroom table, notebooks and teaching materials, no children, calm attentive interaction.",
+    "administration": "An adult office administrator working at an organised white reception desk, laptop, paper folders and desk phone, modern London office, candid three-quarter composition.",
+    "about": "Two adult recruitment consultants listening to a business owner across a small meeting table in a London office with tall sash windows, eye-level wide candid scene, no staged handshake.",
+    "candidates": "An adult job candidate and recruiter having a relaxed one-to-one conversation at a round table, simple portfolio closed on table, bright neutral London meeting room, candid side view.",
+    "services-hospitality": "Close editorial detail of a restaurant supervisor's hands setting a silver tray on a linen-covered service station, white cuffs, elegant British restaurant softly out of focus. No faces required.",
+    "services-finance": "Still life of a working accountant's desk: calculator, open ledger with indistinct numbers, glasses, ceramic coffee cup and laptop edge, warm daylight, overhead oblique composition.",
+    "services-technology": "A modern media editing workstation, colour grading monitor displaying abstract nonbranded footage, headphones and keyboard, an adult editor seen from behind, small creative studio.",
+    "services-care": "An adult care worker in plain navy scrubs talking attentively with an older adult in a bright comfortable communal sitting room, respectful documentary scene, no medical procedure.",
+    "services-administration": "Close view of hands organising a daily office schedule beside a desk telephone and neatly filed documents, bright white desk, subtle orange pencil, candid detail.",
+    "home-careers": "An adult hospitality professional in a simple white shirt and dark apron walking through a sunlit London restaurant doorway before a shift, candid full upper body, thoughtful natural expression.",
+    "kitchen": "Two chefs preparing dishes at a London restaurant kitchen pass; natural editorial photography."
+  }
+}
