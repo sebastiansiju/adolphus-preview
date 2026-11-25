@@ -19,12 +19,13 @@
   },
   {
     "role": "reception",
-    "source": "https://www.pexels.com/photo/7821345/",
-    "license": "https://www.pexels.com/license/",
+    "source": "https://www.flickr.com/photos/brokentaco/53352218409/",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
     "retrieved": "2026-11-25",
-    "original": "stock-candidates/reception-original.jpg",
-    "width": 4000,
-    "height": 6000
+    "original": "stock-candidates/heathrow-reception.jpg",
+    "width": 5472,
+    "height": 3648,
+    "author": "Brokentaco"
   },
   {
     "role": "baristas",

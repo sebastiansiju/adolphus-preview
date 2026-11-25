@@ -397,3 +397,25 @@ html{scroll-padding-top:24px}body{background:#fff}#main-content{width:100%;max-w
   .service-banner:first-child .service-banner-copy { align-self: stretch; }
   .service-banner:first-child .service-banner-photo::after { background: linear-gradient(0deg, #17120ef5, #17120ea8 64%, transparent); }
 }
+
+.role-reading {
+  display: grid;
+  gap: clamp(32px, 3vw, 40px);
+  padding-block: clamp(32px, 4vw, 56px);
+  border-block: 1px solid var(--line);
+}
+.role-reading > section {
+  width: 100%;
+  max-width: 55ch;
+  text-align: start;
+}
+#main-content #page-content .role-reading h2 { margin: 0 0 12px; }
+#main-content #page-content .role-reading p,
+#main-content #page-content .role-reading li {
+  font-size: 16px;
+  line-height: 1.65;
+}
+.role-reading p { margin: 0; }
+.role-reading ul { margin: 16px 0 0; padding-inline-start: 1.25em; }
+.role-reading li { padding: 0; }
+.role-reading li + li { margin-top: 6px; }
