@@ -1,0 +1,7 @@
+<div className="hero-scroll-scene"><section className="hero hero-banner" aria-labelledby="hero-title">{header}
+
+<div className="perspective-room banner-art" aria-hidden="true"><div className="banquet-shot"><img className="banquet-photo" src="/royal-banquet-hero.png" alt="" fetchPriority="high"/></div><div className="hero-mist-bank"><div className="hero-mist hero-mist-front"/><div className="hero-mist hero-mist-back"/></div><div className="hero-upper-mist"><div className="hero-mist"/></div><div className="hero-layer-fade"/><div className="vanta-atmosphere" data-script="/vanta-background.js?v=2"/></div><div className="banner-layout">
+
+<div className="banner-copy"><h1 id="hero-title">Exceptional people.<br/>Extraordinary possibilities.</h1><p>Find experienced staff for your team, or explore your next role. We recruit for permanent, interim and temporary positions.</p></div>
+
+</div></section></div>

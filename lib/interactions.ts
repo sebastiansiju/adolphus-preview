@@ -60,6 +60,21 @@ export function initInteractions(): () => void {
   };
   revealHash();
   window.addEventListener('hashchange', revealHash, options);
+    const staffingForm = document.querySelector<HTMLFormElement>('#staffing-enquiry');
+    staffingForm?.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!staffingForm.reportValidity()) return;
+      const data = new FormData(staffingForm);
+      const fields = [['Name','name'],['Email','email'],['Company or venue','venue'],['Location','location'],['Roles','roles'],['Staff required','headcount'],['Dates and times','dates'],['Support','arrangement'],['Requirements','requirements']];
+      const body = 'Hello Adolphus Group,\n\nPlease contact me about the following staffing brief.\n\n' + fields.map(([label,key]) => label + ': ' + String(data.get(key) ?? '')).join('\n');
+      const link = document.querySelector<HTMLAnchorElement>('#staffing-email');
+      if (link) link.href = 'mailto:info@adolphusgroup.com?subject=' + encodeURIComponent('Staffing enquiry — ' + String(data.get('venue'))) + '&body=' + encodeURIComponent(body);
+      const result = document.querySelector<HTMLElement>('#staffing-result');
+      const status = document.querySelector<HTMLElement>('#staffing-status');
+      if (result) result.hidden = false;
+      if (status) status.textContent = 'Your draft is ready. Open your email app to review and send it. Nothing has been submitted yet.';
+      link?.focus();
+    }, options);
   const form = document.querySelector<HTMLFormElement>('#role-enquiry');
   const sector = form?.elements.namedItem('sector');
   if (sector instanceof HTMLSelectElement) {

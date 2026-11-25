@@ -1,0 +1,32 @@
+from pathlib import Path
+p=Path('app/site-page.tsx');s=p.read_text(encoding='utf8');hero=s[s.index('<div className="hero-scroll-scene">'):s.index('<section className="intro home-overview">')]
+Path('hero-before-unslop.txt').write_text(hero,encoding='utf8')
+s=s.replace("import {useEffect}","import {EmployerEnquiry} from './employer-enquiry';\nimport {useEffect}")
+s=s.replace('More than recruitment.<br/>A personal connection.','Hospitality staffing.<br/>London experience.')
+s=s.replace('We take time to understand your business, the people you need and the ambitions that shape your next move.','Adolphus Group supplies hospitality staff across London, drawing on years of industry experience. From chefs and waiting staff to reception and back-of-house teams, we help venues prepare for the service ahead.')
+s=s.replace('London knowledge. Specialist experience. A conversation that starts with you.','People prepared for your venue, your standards and your service.')
+s=s.replace('Recruitment<br/>by sector','Hospitality first.<br/>Specialist support beyond it.')
+s=s.replace('From hospitality and events to finance and administration, we help London businesses find people with the experience they need.','Chefs, baristas, receptionists and service teams for London hotels, restaurants and events. We also recruit across finance, technology, care, education and administration.')
+s=s.replace('Hiring for your team','From one appointment<br/>to full service teams')
+s=s.replace('Tell us about your venue or business, the people you need and when you need them. We’ll talk through the options with you.','Cover a single role, prepare for a busy hotel service or plan the team for a large banquet. Tell us your staffing numbers, timings and standards so we can discuss the right support.')
+s=s.replace('Discuss your staffing needs</a></div><dl','Plan your staffing</a></div><dl')
+s=s.replace('<dt>Temporary staffing</dt><dd>Cover for individual shifts, events and busy periods.</dd>','<dt>Hotel and restaurant services</dt><dd>Chefs, floor teams, baristas and back-of-house support for day-to-day operations and busy periods.</dd>')
+s=s.replace('<dt>Interim placements</dt><dd>Experienced support for a defined period or a gap in your team.</dd>','<dt>Banquets and large events</dt><dd>Staffing across multiple roles, with the team size, service schedule and venue requirements agreed in your brief.</dd>')
+s=s.replace('<dt>Permanent recruitment</dt><dd>A search shaped around the role, your team and the experience you need.</dd>','<dt>Training and induction</dt><dd>Training and additional induction before candidates are put forward, with venue-specific requirements discussed as part of preparation.</dd>')
+s=s.replace('Your experience.<br/>Your next chapter.','Find your next<br/>hospitality role')
+s=s.replace('A little clarity.<br/>Before we begin.','Your staffing questions')
+s=s.replace('Great service starts<br/>with great people.','Planning your<br/>next service?')
+s=s.replace('Recruitment built around <em>your business.</em>','London recruitment.<br/>Hospitality experience.')
+s=s.replace('A personal approach.','How we work with you')
+s=s.replace('People who fit<br/>the way you work.','Recruitment shaped<br/>around the role')
+s=s.replace('Find your <em>next opportunity.</em>','Find your next role')
+s=s.replace('Let’s find your<br/>next great fit.','Let’s plan<br/>your staffing')
+s=s.replace('href="mailto:info@adolphusgroup.com?subject=Staffing%20enquiry">I’m hiring','href="#staffing-enquiry">I’m hiring')
+start=s.index("{view==='contact'")
+s=s[:start]+s[start:].replace('</section></>}','</section><EmployerEnquiry/></>}',1)
+# Replace the three static role teasers with the complete role directory.
+a=s.index('<div className="process-grid">',s.index('<div className="hospitality-guide">'));b=s.index('<div className="hospitality-paths">',a)
+s=s[:a]+'''<div className="process-grid hospitality-role-directory">{Object.entries(hospitalityRoles).map(([key,role])=><article key={key}><h3>{role.title}</h3><p>{role.intro}</p><a className="inline-link" href={'/expertise/hospitality/'+key}>Explore {role.title.toLowerCase()} →</a></article>)}</div>'''+s[b:]
+s=s.replace('We recruit for kitchens, dining rooms and events across London, with temporary, interim and permanent options.','We recruit for kitchens, reception, coffee service, dining rooms and events across London, with temporary, interim and permanent options.')
+assert hero in s
+p.write_text(s,encoding='utf8')
