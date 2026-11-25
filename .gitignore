@@ -5,3 +5,4 @@ install-incomplete/
 *.tsbuildinfo
 next-env.d.ts
 image-originals/
+stock-candidates/

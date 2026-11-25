@@ -1,5 +1,7 @@
+import {initServiceBanners} from './service-banners';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {initScrollReveals} from './scroll-reveals';
 
 /** Shared by the React lifecycle and the standalone HTML preview. */
 export function initInteractions(): () => void {
@@ -10,7 +12,7 @@ export function initInteractions(): () => void {
   if (opening) opening.style.display = 'none';
   intro.add('(prefers-reduced-motion: no-preference)', () => {
     // Preserve deep links and restored reading positions.
-    if (location.hash || window.scrollY > 40) return;
+    if (document.querySelector('.home-page') || location.hash || window.scrollY > 40) return;
     gsap.fromTo('#page-content',
       {opacity:0, y:24, scale:.975, transformOrigin:'50% 0%'},
       {opacity:1, y:0, scale:1, duration:.65, ease:'power3.out',
@@ -117,13 +119,16 @@ export function initInteractions(): () => void {
         scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:.45}
       });
     }
-    gsap.utils.toArray<HTMLElement>('.overview-images img, .about-photo img').forEach(image => {
+    const disposeServiceBanners = initServiceBanners();
+    gsap.utils.toArray<HTMLElement>('.about-photo img').forEach(image => {
       gsap.fromTo(image, {clipPath:'inset(8% 0 0 0)'}, {
         clipPath:'inset(0% 0 0 0)',duration:1,ease:'power2.out',
         scrollTrigger:{trigger:image,start:'top 90%',once:true}
       });
     });
 
+    return disposeServiceBanners;
   });
-  return () => { abort.abort(); disposeFog?.(); fogScript?.remove(); intro.revert(); motion.revert(); close(); };
+  const disposeScrollReveals = initScrollReveals();
+  return () => { disposeScrollReveals(); abort.abort(); disposeFog?.(); fogScript?.remove(); intro.revert(); motion.revert(); close(); };
 }

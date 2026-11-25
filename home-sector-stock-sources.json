@@ -1,0 +1,37 @@
+[
+  {
+    "sector": "hospitality",
+    "source": "https://www.pexels.com/photo/20184675/",
+    "license": "https://www.pexels.com/license/",
+    "width": 5464,
+    "height": 8192
+  },
+  {
+    "sector": "finance",
+    "source": "https://www.pexels.com/photo/33175669/",
+    "license": "https://www.pexels.com/license/",
+    "width": 4160,
+    "height": 2773
+  },
+  {
+    "sector": "technology",
+    "source": "https://www.pexels.com/photo/34804001/",
+    "license": "https://www.pexels.com/license/",
+    "width": 4928,
+    "height": 3280
+  },
+  {
+    "sector": "care-education",
+    "source": "https://www.pexels.com/photo/36650153/",
+    "license": "https://www.pexels.com/license/",
+    "width": 4949,
+    "height": 3300
+  },
+  {
+    "sector": "administration",
+    "source": "https://www.pexels.com/photo/7688110/",
+    "license": "https://www.pexels.com/license/",
+    "width": 5184,
+    "height": 3888
+  }
+]

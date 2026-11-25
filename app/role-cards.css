@@ -1,0 +1,15 @@
+#main-content .role-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 28px;margin-top:44px}
+#main-content .role-photo-card{display:flex;flex-direction:column;min-width:0;color:#202020;text-decoration:none;background:#fff;border:0;border-bottom:1px solid #dedbd7;padding:0;outline-offset:6px}
+#main-content .role-photo-frame{overflow:hidden;aspect-ratio:3/2;border-radius:3px;background:#f4f1ec}
+#main-content .role-photo-frame img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.65,.3,1)}
+#main-content .role-photo-copy{display:flex;flex:1;flex-direction:column;padding:24px 0 22px}
+#main-content #page-content .role-photo-copy h3{font-size:clamp(26px,2.2vw,32px);line-height:1.15;margin:0 0 14px;text-wrap:balance}
+#main-content #page-content .role-photo-copy p{font-size:15px;line-height:1.65;margin:0 0 24px;color:#5a5956;max-width:34ch}
+#main-content .role-photo-link{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;font-size:14px;font-weight:500}
+#main-content .role-photo-link span{display:grid;place-items:center;width:32px;height:32px;border:1px solid #ddd6ce;border-radius:50%;font-size:21px;transition:background .2s,border-color .2s}
+#main-content .role-photo-card:focus-visible{outline:2px solid #c64c00}
+#main-content .role-photo-card:focus-visible .role-photo-link span{background:#ff6800;border-color:#ff6800}
+@media(hover:hover){#main-content .role-photo-card:hover .role-photo-frame img{transform:scale(1.035)}#main-content .role-photo-card:hover .role-photo-link span{background:#ff6800;border-color:#ff6800}}
+@media(max-width:1050px){#main-content .role-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px}}
+@media(max-width:580px){#main-content .role-photo-grid{grid-template-columns:1fr;gap:32px;margin-top:32px}#main-content .role-photo-copy{padding-top:20px}#main-content #page-content .role-photo-copy h3{font-size:29px}}
+@media(prefers-reduced-motion:reduce){#main-content .role-photo-frame img,#main-content .role-photo-link span{transition:none}#main-content .role-photo-card:hover .role-photo-frame img{transform:none}}

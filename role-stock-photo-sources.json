@@ -1,0 +1,56 @@
+[
+  {
+    "role": "kitchen",
+    "source": "https://www.pexels.com/photo/chef-cooking-fresh-vegetables-on-a-frying-pan-8629109/",
+    "license": "https://www.pexels.com/license/",
+    "retrieved": "2026-11-25",
+    "original": "stock-candidates/kitchen-chef-original.jpg",
+    "width": 6016,
+    "height": 4016
+  },
+  {
+    "role": "waiting",
+    "source": "https://www.pexels.com/photo/11808194/",
+    "license": "https://www.pexels.com/license/",
+    "retrieved": "2026-11-25",
+    "original": "stock-candidates/waiting-original.jpg",
+    "width": 6142,
+    "height": 4095
+  },
+  {
+    "role": "reception",
+    "source": "https://www.pexels.com/photo/7821345/",
+    "license": "https://www.pexels.com/license/",
+    "retrieved": "2026-11-25",
+    "original": "stock-candidates/reception-original.jpg",
+    "width": 4000,
+    "height": 6000
+  },
+  {
+    "role": "baristas",
+    "source": "https://www.pexels.com/photo/6612587/",
+    "license": "https://www.pexels.com/license/",
+    "retrieved": "2026-11-25",
+    "original": "stock-candidates/baristas-original.jpg",
+    "width": 5473,
+    "height": 3654
+  },
+  {
+    "role": "back-house",
+    "source": "https://www.pexels.com/photo/29286719/",
+    "license": "https://www.pexels.com/license/",
+    "retrieved": "2026-11-25",
+    "original": "stock-candidates/back-house-original.jpg",
+    "width": 4331,
+    "height": 6497
+  },
+  {
+    "role": "events",
+    "source": "https://www.pexels.com/photo/19351564/",
+    "license": "https://www.pexels.com/license/",
+    "retrieved": "2026-11-25",
+    "original": "stock-candidates/events-original.jpg",
+    "width": 7008,
+    "height": 4672
+  }
+]
